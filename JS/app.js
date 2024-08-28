@@ -1,10 +1,10 @@
 import { tweetsData } from "./data.js";
 const tweetBtn = document.getElementById('tweet-btn')
-const tweet = document.getElementById('tweet')
+const tweetInput = document.getElementById('tweet-input')
 
 tweetBtn.addEventListener('click', function() {
-  console.log(tweet.value)
-  tweet.value = ''
+  console.log(tweetInput.value)
+  tweetInput.value = ''
 })
 
 console.log(tweetsData)
