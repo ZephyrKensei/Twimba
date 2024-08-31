@@ -35,4 +35,8 @@ function getFeedHtml(){
   return feedHtml 
 }
 
-console.log(getFeedHtml())
+function render() {
+  document.getElementById('feed').innerHTML = getFeedHtml()
+}
+
+render()
