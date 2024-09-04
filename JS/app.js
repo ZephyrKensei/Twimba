@@ -7,10 +7,16 @@ tweetBtn.addEventListener('click', function() {
   console.log(tweetInput.value)
   tweetInput.value = ''
 })
- // log out the contents of the 'data-like' data-attribute
+ // selecting the contents of the 'data-like' data-attribute
 document.addEventListener('click', function(e) {
-    console.log(e.target.dataset.like)
+    if (e.target.dataset.like) {
+      handleLikeClick(e.target.dataset.like)
+    }
 })
+
+function handleLikeClick(tweetId) {
+  console.log(tweetId)
+}
 
 // Create Tweets boilerplate to display
 function getFeedHtml(){
