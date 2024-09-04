@@ -7,6 +7,10 @@ tweetBtn.addEventListener('click', function() {
   console.log(tweetInput.value)
   tweetInput.value = ''
 })
+ // log out the contents of the 'data-like' data-attribute
+document.addEventListener('click', function(e) {
+    console.log(e.target.dataset.like)
+})
 
 // Create Tweets boilerplate to display
 function getFeedHtml(){
@@ -46,9 +50,3 @@ function render() {
 }
 
 render()
-
-document.addEventListener('click', function(e) {
-  if (e.target.dataset.share){
-      console.log(e.target.dataset.share)
-  }
-})
