@@ -3,11 +3,6 @@ import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
 const tweetBtn = document.getElementById('tweet-btn')
 const tweetInput = document.getElementById('tweet-input')
 
-// Create tweet button functionality
-tweetBtn.addEventListener('click', function() {
-  console.log(tweetInput.value)
-  tweetInput.value = ''
-})
 
  // selecting the contents of the 'data-like' data-attribute
 document.addEventListener('click', function(e){
@@ -55,20 +50,20 @@ function handleReplyClick(replyId) {
   document.getElementById(`replies-${replyId}`).classList.toggle('hidden')
 }
 
+// Create tweet button functionality
 function handleTweetBtnClick() {
-  console.log(
-    {
+  tweetsData.unshift({
       handle: `@Scrimba`,
-      profilePic: `scrimbalogo.png`,
+      profilePic: `images/tcruise.png`,
       likes: 0,
       retweets: 0,
       tweetText: tweetInput.value,
       replies: [],
       isLiked: false,
       isRetweeted: false,
-      uuid: uuidv4(),
-  }
-  )
+      uuid: uuidv4()
+  })
+  render()
 }
 
 
