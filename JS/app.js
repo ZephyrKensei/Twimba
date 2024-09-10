@@ -1,8 +1,5 @@
 import { tweetsData } from "./data.js";
 import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
-const tweetBtn = document.getElementById('tweet-btn')
-const tweetInput = document.getElementById('tweet-input')
-
 
  // selecting the contents of the 'data-like' data-attribute
 document.addEventListener('click', function(e){
@@ -52,18 +49,23 @@ function handleReplyClick(replyId) {
 
 // Create tweet button functionality
 function handleTweetBtnClick() {
-  tweetsData.unshift({
-      handle: `@Scrimba`,
-      profilePic: `images/tcruise.png`,
-      likes: 0,
-      retweets: 0,
-      tweetText: tweetInput.value,
-      replies: [],
-      isLiked: false,
-      isRetweeted: false,
-      uuid: uuidv4()
-  })
-  render()
+  const tweetInput = document.getElementById('tweet-input')
+  if(tweetInput.value){
+
+    tweetsData.unshift({
+        handle: `@Scrimba`,
+        profilePic: `images/tcruise.png`,
+        likes: 0,
+        retweets: 0,
+        tweetText: tweetInput.value,
+        replies: [],
+        isLiked: false,
+        isRetweeted: false,
+        uuid: uuidv4()
+    })
+    render()
+    tweetInput.value = ''
+  }
 }
 
 
